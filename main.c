@@ -80,23 +80,28 @@ int main(int argc, const char * argv[]) {
     for(i=0;i<6;i++)
         time[i]=str2[i+7];
     time[6]='\0';
+        
         for(i=0;i<2;i++)
             h[i]=time[i];
         h[2]='\0';
         for(i=0;i<2;i++)
             m[i]=time[i+2];
         m[2]='\0';
+        
         for(i=0;i<2;i++)
             s[i]=time[i+4];
         s[2]='\0';
     printf("GPGGA,utc时间:%s时%s分%s秒\n",h,m,s);
         fprintf(fp2,"GPGGA,utc时间:%s时%s分%s秒  ",h,m,s);
+        
     for(i=0;i<8;i++)
         lat[i]=str2[i+14];
     lat[8]='\0';
+        
         for(i=0;i<2;i++)
             degree[i]=lat[i];
         degree[2]='\0';
+        
         for(i=0;i<2;i++)
             divide[i]=lat[i+2];
         divide[2]='\0';
@@ -109,16 +114,20 @@ int main(int argc, const char * argv[]) {
         for(i=0;i<3;i++)
             degree[i]=longtitude[i];
         degree[3]='\0';
+        
         for(i=0;i<2;i++)
             divide[i]=longtitude[i+3];
         divide[2]='\0';
     printf("正确经度:%s度%s分\n",degree,divide);
         fprintf(fp2,"正确经度:%s度%s分  ",degree,divide);
 
+        
+        
     for(i=0;i<2;i++)
        sate[i]=str2[i+39];
     sate[2]='\0';
     printf("卫星:%s\n",sate);
+        
     for(i=0;i<4;i++)
         altitude[i]=str2[i+43];
     altitude[4]='\0';
